@@ -1,0 +1,98 @@
+'use strict';
+const score0El = document.querySelector('#score--0');
+const score1El = document.getElementById('score--1');
+const current0El = document.getElementById('current--0');
+const current1El = document.getElementById('current--1');
+
+
+score0El.textContent = 0;
+score1El.textContent = 0;
+
+
+
+let currentDice = document.querySelector('.dice');
+
+const scores = [0,0];
+let currentScore = 0;
+let activePlayer = 0;
+
+const player1 = document.querySelector('.player--0');
+const player2 = document.querySelector('.player--1');
+currentDice.classList.add('hidden');
+
+
+const roll = ()=>{
+  currentDice.classList.remove('hidden');
+    let dice = Math.floor(Math.random()*6)+1;
+    let diceImg = `dice-${dice}.png`;
+    console.log(dice);
+    currentDice.src = diceImg;
+    currentScore+=dice;
+    document.getElementById(`current--${activePlayer}`).textContent=currentScore;
+    if(dice==1){
+      document.getElementById(`current--${activePlayer}`).textContent=0;
+      activePlayer = activePlayer ===0 ? 1 : 0;
+      currentScore=0;
+        player1.classList.toggle('player--active');
+        player2.classList.toggle('player--active')
+    }
+  }
+
+
+let holdScore = 0;
+let prevs =0;
+const switchplayer = ()=>{
+    const sc = document.getElementById(`current--${activePlayer}`).textContent;
+    holdScore += Number(sc);
+    prevs = Number(document.getElementById(`score--${activePlayer}`).textContent);
+    holdScore+=prevs;
+    document.getElementById(`score--${activePlayer}`).textContent = holdScore;
+    holdScore=0;
+    activePlayer = activePlayer ===0 ? 1 : 0;
+    currentScore=0;
+
+
+    console.log(player1.classList);
+    player1.classList.toggle('player--active');
+
+    player2.classList.toggle('player--active')
+
+    chk();
+
+}
+
+
+var audio = new Audio('win.mp3');
+
+
+const chk = function(){
+  console.log('calling');
+  const player1score = Number(document.getElementById(`score--0`).textContent);
+  const player2score = Number(document.getElementById(`score--1`).textContent);
+  const fireworksp1 = document.querySelector('.fireworks-player0');
+  const fireworksp2 = document.querySelector('.fireworks-player1');
+
+  const headmsg = document.querySelector('#topheading');
+  if(player1score>=100)
+  {
+    audio.play();
+    headmsg.textContent="Player 1 wins refresh to reset the game";
+    fireworksp1.classList.remove('hidden');
+  }
+  if(player2score>=100)
+  {
+    audio.play();
+    fireworksp2.classList.remove('hidden');
+    headmsg.textContent="Player 2 wins refresh to reset the game";
+
+  }
+}
+
+
+
+
+
+
+document.querySelector('.btn--roll').addEventListener('click', roll);
+
+document.querySelector('.btn--hold').addEventListener('click',switchplayer);
