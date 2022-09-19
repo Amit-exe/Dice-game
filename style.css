@@ -182,3 +182,22 @@ main {
 .hidden{
   display: none;
 }
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  body{
+    height: 230vh;
+    width: 115vh;
+    background-color: #6FEDD6;
+    background-image: linear-gradient(to right,#6FEDD6 , #6FEDD6)
+
+  }
+
+  #topheading{
+    display: inline-block;
+    position: absolute;
+    top:40%;
+    text-align: center;
+  }
+
+}
