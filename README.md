@@ -11,4 +11,5 @@ It is simple game with simple rules as follows:
  ![image](https://user-images.githubusercontent.com/56499723/191095186-3be99815-fadb-472d-bae1-d2aa0221ed54.png)
 
 winner screen with trumpet sound lol you can't hear in screen shot just try by yourself
-![image](https://user-images.githubusercontent.com/56499723/191095364-5ffa43a3-9bba-4c40-9e1f-43714e5f165d.png)
+![image](https://user-images.githubusercontent.com/56499723/191098445-43e0d5e9-1aac-40e7-82a6-3027411d15e4.png)
+
