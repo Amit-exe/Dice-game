@@ -8,7 +8,8 @@ It is simple game with simple rules as follows:
  
  here is the link: https://amit-exe.github.io/Dice-game/
  
- ![image](https://user-images.githubusercontent.com/56499723/191095186-3be99815-fadb-472d-bae1-d2aa0221ed54.png)
+![image](https://user-images.githubusercontent.com/56499723/191098570-a39d0b36-4c9e-4686-83e5-20387eca2e20.png)
+
 
 winner screen with trumpet sound lol you can't hear in screen shot just try by yourself
 ![image](https://user-images.githubusercontent.com/56499723/191098445-43e0d5e9-1aac-40e7-82a6-3027411d15e4.png)
