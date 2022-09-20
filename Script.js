@@ -45,7 +45,9 @@ const roll = ()=>{
 
 let holdScore = 0;
 let prevs =0;
+var holds = new Audio('hold.mp3');
 const switchplayer = ()=>{
+    holds.play();
     let sc = document.getElementById(`current--${activePlayer}`).textContent;
     holdScore += Number(sc);
     prevs = Number(document.getElementById(`score--${activePlayer}`).textContent);
