@@ -75,7 +75,7 @@ const chk = function(){
   const fireworksp2 = document.querySelector('.fireworks-player1');
   const headmsg = document.querySelector('#topheading');
   console.log(player1score);
-  if(player1score>=10)
+  if(player1score>=100)
   {
     audio.play();
     player1.classList.toggle('player--active');
@@ -84,7 +84,7 @@ const chk = function(){
     headmsg.textContent="Player 1 wins";
     fireworksp1.classList.remove('hidden');
   }
-  if(player2score>=10)
+  if(player2score>=100)
   {
     audio.play();
     player1.classList.toggle('player--active');
