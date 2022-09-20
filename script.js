@@ -28,7 +28,6 @@ const roll = ()=>{
     let dice = Math.floor(Math.random()*6)+1;
     let diceImg = `dice-${dice}.png`;
     console.log(dice);
-    diceRoll.play();
     currentDice.src = diceImg;
     currentScore+=dice;
     document.getElementById(`current--${activePlayer}`).textContent=currentScore;
@@ -39,6 +38,8 @@ const roll = ()=>{
       currentScore=0;
         player1.classList.toggle('player--active');
         player2.classList.toggle('player--active');
+    }else{
+      diceRoll.play();
     }
   }
 
