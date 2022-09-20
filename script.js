@@ -20,18 +20,22 @@ const player1 = document.querySelector('.player--0');
 const player2 = document.querySelector('.player--1');
 currentDice.classList.add('hidden');
 
+var diceRoll = new Audio('dice-roll.mp3');
+var oops = new Audio('oops.mp3');
 
 const roll = ()=>{
   currentDice.classList.remove('hidden');
     let dice = Math.floor(Math.random()*6)+1;
     let diceImg = `dice-${dice}.png`;
     console.log(dice);
+    diceRoll.play();
     currentDice.src = diceImg;
     currentScore+=dice;
     document.getElementById(`current--${activePlayer}`).textContent=currentScore;
     if(dice==1){
       document.getElementById(`current--${activePlayer}`).textContent=0;
       activePlayer = activePlayer ===0 ? 1 : 0;
+      oops.play();
       currentScore=0;
         player1.classList.toggle('player--active');
         player2.classList.toggle('player--active');
@@ -63,7 +67,6 @@ const switchplayer = ()=>{
 
 var audio = new Audio('win.mp3');
 
-
 const chk = function(){
   console.log('calling');
   const player1score = Number(document.getElementById(`score--0`).textContent);
@@ -72,7 +75,7 @@ const chk = function(){
   const fireworksp2 = document.querySelector('.fireworks-player1');
   const headmsg = document.querySelector('#topheading');
   console.log(player1score);
-  if(player1score>=100)
+  if(player1score>=10)
   {
     audio.play();
     player1.classList.toggle('player--active');
@@ -81,7 +84,7 @@ const chk = function(){
     headmsg.textContent="Player 1 wins";
     fireworksp1.classList.remove('hidden');
   }
-  if(player2score>=100)
+  if(player2score>=10)
   {
     audio.play();
     player1.classList.toggle('player--active');
