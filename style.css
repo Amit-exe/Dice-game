@@ -63,8 +63,6 @@ main {
   margin-bottom: auto;
 }
 
-
-
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
 }
@@ -102,26 +100,6 @@ main {
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
-
-.fireworks{
-  position: absolute;
-  top: 0;
-  left:0
-  z-index: -1;
-  width: 50%;
-}
-
-#topheading{
-  display: inline-block;
-  position: absolute;
-  top:100px;
-  color: white;
-  font-size: 5rem;
-  width: 100rem;
-  height: 60rem;
-  text-align: center;
-}
-
 .btn {
   position: absolute;
   left: 50%;
@@ -161,6 +139,12 @@ main {
   top: 46.1rem;
 }
 
+.btn-help{
+  top: 4rem;
+  left: 5rem;
+  padding: 1rem 2rem;
+}
+
 .btn:active {
   transform: translate(-50%, 3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -179,17 +163,94 @@ main {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
 }
 
-.hidden{
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hidden {
   display: none;
 }
 
-@media only screen and (max-width: 1000px) {
+.fireworks{
+  position: absolute;
+  top: 0;
+  left:0
+  z-index: -1;
+  width: 50%;
+}
+
+.modal{
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  top: 9rem;
+  opacity: 95%;
+  left: 8rem;
+  padding: 5px 30px 20px 30px;;
+  font-size: 1.5rem;
+  height: auto;
+  width: 80%;
+  word-wrap: break-word;
+}
+.modal-close{
+  position: relative;
+  font-size: 2.5rem;
+  left: 100%;
+  border-style: none;
+}
+#topheading{
+  display: inline-block;
+  position: absolute;
+  top:100px;
+  color: white;
+  font-size: 5rem;
+  width: 100rem;
+  height: 60rem;
+  text-align: center;
+}
+#holdlogo{
+  width: 50px;
+  height: auto;
+  line-height: 2rem;
+  font-size: 3rem;
+}
+
+  @media only screen and (max-width: 1000px) {
+
+
+
   /* For mobile phones: */
+
+  .modal{
+    top: 11rem;
+    left: 10rem;
+    padding: 5px 30px 20px 50px;;
+    font-size: 3rem;
+    height: 55%;
+    width: 70%;
+    z-index: 5;
+  }
+  .modal-close{
+    position: relative;
+    font-size: 4rem;
+    left: 100%;
+    border-style: none;
+  }
+
   body{
     height: 230vh;
-    width: 115vh;
+    width: 111vh;
     background-color: #6FEDD6;
     background-image: linear-gradient(to right,#6FEDD6 , #6FEDD6)
+
+  }
+  main{
+    height: 82rem;
 
   }
 
@@ -198,6 +259,46 @@ main {
     position: absolute;
     top:40%;
     text-align: center;
+    font-size: 8rem;
+  }
+
+
+  .btn-help{
+    top: 2rem;
+    left: 7rem;
+    padding: 1rem 2rem;
+  }
+
+  .name{
+    font-size: 5rem;
+  }
+
+  .player{
+    padding: 13rem;
+  }
+
+  .current{
+    padding: 1rem 0rem;
+    width: 90%;
+  }
+  .current-label{
+    font-size: 3rem;
+    margin: 0;
+  }
+  .current-score{
+    font-size: 4rem;
+  }
+  .btn{
+    font-size: 4rem;
+  }
+  .btn--new {
+    top: 3rem;
+  }
+  .btn--roll {
+    top: 39.3rem;
+  }
+  .btn--hold {
+    top: 50rem;
   }
 
 }
